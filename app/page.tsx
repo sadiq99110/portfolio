@@ -15,6 +15,7 @@ export default function Home() {
               <br />
               <span className="accent">{profile.name.split(" ").slice(2).join(" ")}</span>
             </h1>
+            
             <p className="role mono">{profile.title}</p>
             <p className="lead">{profile.summary}</p>
             <div className="actions">
