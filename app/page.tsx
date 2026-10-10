@@ -10,9 +10,6 @@ export default function Home() {
         {/* Hero */}
         <section className="hero" id="top">
           <div className="container">
-            <p className="eyebrow mono">
-              <span className="dot" /> Available for new opportunities
-            </p>
             <h1>
               {profile.name.split(" ").slice(0, 2).join(" ")}
               <br />
