@@ -74,7 +74,6 @@ ul, ol { list-style: none; }
 .hero-canvas.ready { opacity: 1; }
 .hero-canvas canvas { display: block; width: 100% !important; height: 100% !important; cursor: grab; touch-action: pan-y; }
 .hero-canvas canvas.grabbing { cursor: grabbing; }
-.scene-hint { position: absolute; top: 112px; right: 12%; font-size: .72rem; color: var(--muted); letter-spacing: .06em; opacity: .7; pointer-events: none; white-space: nowrap; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: .8rem; color: var(--muted); border: 1px solid var(--border); padding: 6px 14px; border-radius: 999px; margin-bottom: 28px; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px color-mix(in srgb, #22c55e 25%, transparent); }
 .hero h1 { font-size: clamp(2.8rem, 8vw, 5.5rem); line-height: 1; letter-spacing: -0.04em; font-weight: 700; }
@@ -162,7 +161,6 @@ ul, ol { list-style: none; }
   /* On phones the globe sits behind the heading and stays out of the way of scrolling */
   .hero-scene { width: 100%; right: 0; height: 420px; bottom: auto; top: 40px; opacity: .45; pointer-events: none; }
   .hero-canvas canvas { cursor: default; }
-  .scene-hint { display: none; }
   .section { padding: 72px 0; }
   .skills, .projects, .edu { grid-template-columns: 1fr; }
 }

@@ -326,7 +326,6 @@ export default function HeroScene() {
   return (
     <div className="hero-scene" aria-hidden="true">
       <div ref={mountRef} className="hero-canvas" />
-      <p className="scene-hint mono">drag to spin · click to pulse</p>
     </div>
   );
 }
