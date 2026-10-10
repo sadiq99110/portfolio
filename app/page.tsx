@@ -1,6 +1,7 @@
 import { profile, stats, skills, experience, projects, education } from "./data";
 import Nav from "../components/Nav";
 import Reveal from "../components/Reveal";
+import HeroScene from "../components/HeroScene";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main>
         {/* Hero */}
         <section className="hero" id="top">
+          <HeroScene />
           <div className="container">
             <h1>
               {profile.name.split(" ").slice(0, 2).join(" ")}
