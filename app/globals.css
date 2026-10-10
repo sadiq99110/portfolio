@@ -65,7 +65,16 @@ ul, ol { list-style: none; }
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse at 70% 30%, #000 10%, transparent 60%);
 }
-.hero .container { position: relative; z-index: 1; width: 100%; }
+.hero .container { position: relative; z-index: 1; width: 100%; pointer-events: none; }
+.hero .container a, .hero .container .stats { pointer-events: auto; }
+
+/* 3D scene */
+.hero-scene { position: absolute; top: 0; bottom: 0; right: -4%; width: 58%; z-index: 0; }
+.hero-canvas { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
+.hero-canvas.ready { opacity: 1; }
+.hero-canvas canvas { display: block; width: 100% !important; height: 100% !important; cursor: grab; touch-action: pan-y; }
+.hero-canvas canvas.grabbing { cursor: grabbing; }
+.scene-hint { position: absolute; top: 112px; right: 12%; font-size: .72rem; color: var(--muted); letter-spacing: .06em; opacity: .7; pointer-events: none; white-space: nowrap; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: .8rem; color: var(--muted); border: 1px solid var(--border); padding: 6px 14px; border-radius: 999px; margin-bottom: 28px; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px color-mix(in srgb, #22c55e 25%, transparent); }
 .hero h1 { font-size: clamp(2.8rem, 8vw, 5.5rem); line-height: 1; letter-spacing: -0.04em; font-weight: 700; }
@@ -150,6 +159,10 @@ ul, ol { list-style: none; }
   .nav nav.open { display: flex; }
   .nav nav a { padding: 16px; border-top: 1px solid var(--border); }
   .stats { grid-template-columns: repeat(2, 1fr); }
+  /* On phones the globe sits behind the heading and stays out of the way of scrolling */
+  .hero-scene { width: 100%; right: 0; height: 420px; bottom: auto; top: 40px; opacity: .45; pointer-events: none; }
+  .hero-canvas canvas { cursor: default; }
+  .scene-hint { display: none; }
   .section { padding: 72px 0; }
   .skills, .projects, .edu { grid-template-columns: 1fr; }
 }
