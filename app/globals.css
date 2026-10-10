@@ -164,3 +164,16 @@ ul, ol { list-style: none; }
   .section { padding: 72px 0; }
   .skills, .projects, .edu { grid-template-columns: 1fr; }
 }
+
+/* Store links on project cards */
+.store-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.store-links a { font-size: .8rem; padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px; color: var(--text); transition: border-color .2s, color .2s; }
+.store-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Courses & training */
+.sub-title { margin: 48px 0 16px; font-size: .85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 500; }
+.training { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.training li { display: flex; flex-direction: column; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.training strong { font-weight: 500; }
+.training span { color: var(--muted); font-size: .85rem; }
+@media (max-width: 760px) { .training { grid-template-columns: 1fr; } }

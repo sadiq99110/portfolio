@@ -19,17 +19,17 @@ export const profile = {
 
 export const stats = [
   { value: "5+", label: "Years shipping software" },
-  { value: "8+", label: "Production projects" },
+  { value: "11+", label: "Projects delivered" },
   { value: "2", label: "App stores published to" },
   { value: "M.S.", label: "Data Science" },
 ];
 
 export const skills: { group: string; items: string[] }[] = [
-  { group: "Mobile", items: ["React Native", "Flutter", "Kotlin", "Java", "Redux", "GetX", "Room", "Retrofit"] },
-  { group: "Web", items: ["Next.js", "React.js", "TypeScript", "JavaScript", "Tailwind CSS"] },
-  { group: "Back end", items: ["Node.js", "NestJS", "REST APIs", "Microservices", "RabbitMQ", "Webhooks"] },
-  { group: "Data & Cloud", items: ["PostgreSQL", "MySQL", "MongoDB", "Firebase", "Docker", "Azure", "Python", "Power BI"] },
-  { group: "Integrations", items: ["Salesforce", "Zoho Creator", "Payment gateways", "Google & Apple Wallet", "Deep linking", "Push notifications"] },
+  { group: "Mobile", items: ["React Native", "Flutter", "Kotlin", "Java", "Redux", "Redux Toolkit", "GetX", "Room", "Retrofit"] },
+  { group: "Web", items: ["Next.js", "React.js", "TypeScript", "JavaScript", "HTML", "CSS / SCSS", "Tailwind CSS"] },
+  { group: "Back end", items: ["Node.js", "NestJS", "REST APIs", "Microservices", "RabbitMQ", "Webhooks", "PHP"] },
+  { group: "Data & Cloud", items: ["PostgreSQL", "MySQL", "MongoDB", "Firebase", "SQLite", "Docker", "Azure", "GCP", "Python", "Power BI"] },
+  { group: "Integrations", items: ["Salesforce", "Zoho Creator", "Payment gateways", "Google & Apple Wallet", "Dialogflow", "Deep linking", "Push notifications"] },
 ];
 
 export const experience = [
@@ -39,6 +39,7 @@ export const experience = [
     period: "Jul 2021 — Present",
     points: [
       "Build and ship web and mobile apps end to end with Next.js, React, Flutter, React Native and native Android.",
+      "Delivered products across concierge, EdTech and social networking industries.",
       "Develop NestJS microservices that communicate through RabbitMQ.",
       "Publish and maintain apps on the Apple App Store and Google Play.",
       "Integrated Salesforce through webhooks for real-time two-way data sync.",
@@ -58,7 +59,15 @@ export const experience = [
   },
 ];
 
-export const projects = [
+export type Project = {
+  name: string;
+  kind: string;
+  stack: string[];
+  description: string;
+  links?: { label: string; href: string }[];
+};
+
+export const projects: Project[] = [
   {
     name: "OneID Platform",
     kind: "Web platform",
@@ -69,9 +78,20 @@ export const projects = [
   {
     name: "Hey Smarty",
     kind: "AI mobile app",
-    stack: ["Mobile", "AI", "Speech"],
+    stack: ["React Native", "JavaScript", "SQLite"],
     description:
       "ChatGPT-style assistant with speech-to-text, voice-to-voice, Google and Apple sign-in, and chat folders stored on device.",
+  },
+  {
+    name: "CheckTheReviews",
+    kind: "iOS & Android app",
+    stack: ["Mobile", "Reviews"],
+    description:
+      "Helps businesses win more customers by collecting, managing and growing their customer reviews.",
+    links: [
+      { label: "App Store", href: "https://apps.apple.com/us/app/checkthereviews/id1458500788" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=reviews.seethepro.com" },
+    ],
   },
   {
     name: "Islamic Library",
@@ -83,38 +103,62 @@ export const projects = [
   {
     name: "Enrich Kids",
     kind: "Marketplace",
-    stack: ["Next.js", "NestJS"],
+    stack: ["Next.js", "NestJS", "Microservices", "RabbitMQ", "MySQL"],
     description:
       "Marketplace connecting parents with in-person children's courses such as karate, football and summer camps.",
   },
   {
     name: "AI PhotoBooth",
     kind: "AI mobile app",
-    stack: ["Mobile", "Generative AI"],
+    stack: ["Flutter", "Python", "Flask", "OpenCV", "InsightFace"],
     description:
       "Event photo booth that turns selfies into three AI-generated avatars while capturing customer leads for businesses.",
   },
   {
     name: "TradeFindry",
     kind: "iOS app",
-    stack: ["React Native", "Redux", "Firebase"],
+    stack: ["React Native", "Redux", "MySQL", "Firebase"],
     description: "iOS app for designers to search vendor products and build their own design boards.",
+    links: [{ label: "App Store", href: "https://apps.apple.com/bh/app/tradefindry/id1450153318" }],
+  },
+  {
+    name: "Tonic Freeze MEA",
+    kind: "iOS & Android app",
+    stack: ["Redux", "Firebase Firestore"],
+    description: "Ice-cream restaurant app for pickup and delivery orders on iOS and Android.",
+  },
+  {
+    name: "Multi Timer Stopwatch",
+    kind: "Android app",
+    stack: ["Kotlin", "SQLite", "Android XML"],
+    description: "Runs multiple concurrent or sequential timer groups with voice commands and notifications.",
+    links: [{ label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.bit14.multicountdowntimer" }],
   },
   {
     name: "TeeSquare",
     kind: "Android app",
-    stack: ["Java", "Kotlin", "Room", "Retrofit"],
+    stack: ["Java", "Kotlin", "Room", "Retrofit", "MySQL"],
     description: "Native Android EdTech app delivering affordable, inclusive education across Pakistan.",
   },
   {
-    name: "Multi Timer Stopwatch",
-    kind: "Mobile app",
-    stack: ["Mobile", "Voice"],
-    description: "Runs multiple concurrent or sequential timer groups with voice commands and notifications.",
+    name: "Thaqalayn Kids",
+    kind: "Kids learning app",
+    stack: ["Mobile", "Interactive"],
+    description:
+      "Teaches children lessons from the Quran and Ahlulbayt (A.S.) through stories with coloring and puzzle activities.",
   },
 ];
 
 export const education = [
   { degree: "M.S. Data Science", school: "NED University of Engineering and Technology", period: "2023 — 2024" },
   { degree: "B.S. Computer Science", school: "University of Karachi", period: "2018 — 2021" },
+];
+
+export const training = [
+  { course: "React Native", provider: "Udemy · Maximilian Schwarzmüller" },
+  { course: "Flutter & Dart — The Complete Guide", provider: "Academind · Maximilian Schwarzmüller" },
+  { course: "Become a MERN Stack Developer", provider: "Udemy" },
+  { course: "Firebase in a Weekend", provider: "Udacity" },
+  { course: "Version Control with Git", provider: "Udacity" },
+  { course: "Communication, Teamwork & Business Ethics", provider: "SOL soft-skills training" },
 ];

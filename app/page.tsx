@@ -1,4 +1,4 @@
-import { profile, stats, skills, experience, projects, education } from "./data";
+import { profile, stats, skills, experience, projects, education, training } from "./data";
 import Nav from "../components/Nav";
 import Reveal from "../components/Reveal";
 import HeroScene from "../components/HeroScene";
@@ -94,6 +94,15 @@ export default function Home() {
                       <li key={t}>{t}</li>
                     ))}
                   </ul>
+                  {p.links && (
+                    <div className="store-links">
+                      {p.links.map((l) => (
+                        <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
+                          {l.label} ↗
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </Reveal>
               ))}
             </div>
@@ -103,7 +112,7 @@ export default function Home() {
         {/* Education */}
         <section id="education" className="section">
           <div className="container">
-            <SectionTitle index="04" title="Education" />
+            <SectionTitle index="04" title="Education & Training" />
             <div className="edu">
               {education.map((e) => (
                 <Reveal key={e.degree} className="edu-item">
@@ -113,6 +122,15 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
+            <h3 className="sub-title mono">Courses & training</h3>
+            <ul className="training">
+              {training.map((t) => (
+                <Reveal as="li" key={t.course}>
+                  <strong>{t.course}</strong>
+                  <span>{t.provider}</span>
+                </Reveal>
+              ))}
+            </ul>
           </div>
         </section>
 
